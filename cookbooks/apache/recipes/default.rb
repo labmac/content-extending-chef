@@ -8,3 +8,5 @@ package 'httpd'
 service 'httpd' do
   action [:start, :enable]
 end
+
+ohai_plugin 'apache'
