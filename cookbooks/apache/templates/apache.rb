@@ -5,7 +5,6 @@ Ohai.plugin :Apache do
   collect_data :default do
     apache Mash.new
 
-    apache[:modules] = Dir.entries("/usr/lib64/httpd/modules").reject { |x| x =~ /^\./ }.map { |x| x[4..-4] }
+    apache[:modules] = Dir.entries('<%= @mod_path %>').reject { |x| x =~ /^\./ }.map { |x| x[4..-4] }
   end
 end
-
